@@ -1,6 +1,6 @@
 // first we need to create a stage
 var stage = new Konva.Stage({
-  container: "container", // id of container <div>
+  container: 'container', // id of container <div>
   width: 500,
   height: 500,
 });
@@ -13,8 +13,8 @@ var circle = new Konva.Circle({
   x: stage.width() / 2,
   y: stage.height() / 2,
   radius: 70,
-  fill: "yellow",
-  stroke: "black",
+  fill: 'yellow',
+  stroke: 'black',
   strokeWidth: 4,
   draggable: true,
 });
@@ -26,8 +26,8 @@ var star = new Konva.Star({
   numPoints: 12,
   innerRadius: 20,
   outerRadius: 6,
-  fill: "black",
-  stroke: "black",
+  fill: 'black',
+  stroke: 'black',
   strokeWidth: 4,
 });
 
@@ -38,7 +38,7 @@ var blob = new Konva.Line({
     225, 200, 275, 200, 230, 190, 230, 75, 235, 50, 225, 10, 150, 10, 200, 20,
     200, 50,
   ],
-  fill: "#00D2FF",
+  fill: '#00D2FF',
 
   closed: true,
   tension: 0.5,
@@ -52,10 +52,15 @@ var rectangle = new Konva.Rect({
   y: 50,
   width: 100,
   height: 100,
-  fill: "yellowgreen",
-  stroke: "yellow",
+  fill: 'yellowgreen',
+  stroke: 'yellow',
   strokeWidth: 6,
   draggable: true,
+});
+
+// event listeners
+blob.on('dblclick', function () {
+  blob.fill('yellow');
 });
 
 // add the shape to the layer
